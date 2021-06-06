@@ -1,6 +1,6 @@
 /**
  * https://leetcode-cn.com/problems/minimum-window-substring/
- * 116 ms	40.1 MB
+ * 116 ms	39.6 MB
  * 76. 最小覆盖子串
  * 给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
  * 注意：如果 s 中存在这样的子串，我们保证它是唯一的答案。
@@ -20,16 +20,22 @@ var minWindow = function (s, t) {
   }
   let [l, r] = [-1, -1];
   let [mL, mR] = [0, s.length];
-  while (r + 1 < s.length) {
+  let rEnd = s.length - 1;
+  let chrCode;
+  while (r < rEnd) {
     r++;
-    if (!tArray[s[r].charCodeAt()]) continue;
-    sArray[s[r].charCodeAt()]++;
+    chrCode = s[r].charCodeAt();
+    if (!tArray[chrCode]) continue;
+    sArray[chrCode]++;
     if (!check()) continue;
-    while (l < r) {
+    
+    let lEnd = r - t.length + 1;
+    while (l < lEnd) {
       l++;
-      if (!tArray[s[l].charCodeAt()]) continue;
-      sArray[s[l].charCodeAt()]--;
-      if (!check()) {
+      chrCode = s[l].charCodeAt();
+      if (!tArray[chrCode]) continue;
+      sArray[chrCode]--;
+      if (sArray[chrCode] < tArray[chrCode]) {
         if (r - l < mR - mL) {
           mR = r;
           mL = l;
@@ -48,4 +54,4 @@ function check() {
   return true;
 }
 
-console.log(minWindow("ADOBECODEBANC", "ABC"));
+console.log(minWindow("ab", "a"));
