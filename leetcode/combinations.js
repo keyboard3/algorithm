@@ -12,10 +12,10 @@ var combine = function (n, k) {
     arrays = [];
     subArray=[];
     tNum = k;
-    handleArray(1, n);
+    dfs(1, n);
     return arrays;
 };
-function handleArray(start, end) {
+function dfs(start, end) {
     if (subArray.length == tNum) {
         arrays.push(subArray.slice());
         return;
@@ -23,7 +23,7 @@ function handleArray(start, end) {
     if (subArray.length + end - start + 1 < tNum) return;
     for (let i = start; i <= end; i++) {
         subArray.push(i);
-        handleArray(i + 1, end);
+        dfs(i + 1, end);
         subArray.pop();
     }
 }

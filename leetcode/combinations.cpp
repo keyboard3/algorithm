@@ -12,10 +12,10 @@ public:
         tNum = k;
         array.empty();
         list.empty();
-        handleArray(1, n);
+        dfs(1, n);
         return array;
     }
-    void handleArray(int start, int end)
+    void dfs(int start, int end)
     {
         if (list.size() == tNum)
         {
@@ -27,7 +27,7 @@ public:
         for (int i = start; i <= end; i++)
         {
             list.push_back(i);
-            handleArray(i + 1, end);
+            dfs(i + 1, end);
             list.pop_back();
         }
     }

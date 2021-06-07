@@ -13,18 +13,13 @@ public:
     vector<int> twoSum(vector<int> &nums, int target)
     {
         showed.clear();
-        vector<int> result;
         for (int i = 0; i < nums.size(); i++)
         {
             int item = nums[i];
             if (showed[target - item] != 0)
-            {
-                result.push_back(showed[target - item] - 1); //修正
-                result.push_back(i);
-                break;
-            }
+                return vector({showed[target - item] - 1, i});
             showed[item] = i + 1; //为了规避默认值0
         }
-        return result;
+        return nums; //随便返回啥，这题保证有
     }
 };

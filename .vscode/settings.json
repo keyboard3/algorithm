@@ -5,6 +5,8 @@
         "optional": "cpp",
         "unordered_map": "cpp",
         "iosfwd": "cpp",
-        "iterator": "cpp"
+        "iterator": "cpp",
+        "functional": "cpp",
+        "version": "cpp"
     }
 }

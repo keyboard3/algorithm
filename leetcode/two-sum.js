@@ -13,7 +13,7 @@ var twoSum = function (nums, target) {
     for (i = 0; i < nums.length; i++) {
         item = nums[i];
         if (map.has(target - item)) return [map.get(target - item), i];
-        map.set(item % target, i);
+        map.set(target - item, i);
     }
     return [0, 0];
 };
