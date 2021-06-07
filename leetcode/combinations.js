@@ -7,19 +7,24 @@
  */
 let arrays = [];
 let tNum = 0;
+let subArray = [];
 var combine = function (n, k) {
     arrays = [];
+    subArray=[];
     tNum = k;
-    handleArray([], 1, n);
+    handleArray(1, n);
     return arrays;
 };
-function handleArray(subs, start, end) {
-    if (subs.length == tNum) {
-        arrays.push(subs);
+function handleArray(start, end) {
+    if (subArray.length == tNum) {
+        arrays.push(subArray.slice());
         return;
     }
+    if (subArray.length + end - start + 1 < tNum) return;
     for (let i = start; i <= end; i++) {
-        handleArray([...subs, i], i + 1, end);
+        subArray.push(i);
+        handleArray(i + 1, end);
+        subArray.pop();
     }
 }
 
