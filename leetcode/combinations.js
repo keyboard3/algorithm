@@ -16,7 +16,7 @@ var combine = function (n, k) {
 function handleArray(subs, start, end) {
     if (subs.length == tNum) {
         arrays.push(subs);
-        return subs;
+        return;
     }
     for (let i = start; i <= end; i++) {
         handleArray([...subs, i], i + 1, end);
