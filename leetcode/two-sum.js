@@ -13,9 +13,9 @@ var twoSum = function (nums, target) {
     for (i = 0; i < nums.length; i++) {
         item = nums[i];
         if (map.has(target - item)) return [map.get(target - item), i];
-        map.set(item, i);
+        map.set(item % target, i);
     }
     return [0, 0];
 };
 
-console.log(twoSum([3, 2, 4], 6))
+console.log(twoSum([-1, -2, -3, -4, -5], -8))
