@@ -3,6 +3,8 @@
         "map": "cpp",
         "vector": "cpp",
         "optional": "cpp",
-        "unordered_map": "cpp"
+        "unordered_map": "cpp",
+        "iosfwd": "cpp",
+        "iterator": "cpp"
     }
 }
