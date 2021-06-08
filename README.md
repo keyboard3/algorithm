@@ -1,5 +1,8 @@
 # algorithm
+## 注意
+vsCode的Code Runner插件对于cpp的配置
 
+`"cpp": "cd $dir && mkdir -p .dist && g++ -std=c++17 -stdlib=libc++ -g $fileName -o .dist/$fileNameWithoutExt && $dir/.dist/$fileNameWithoutExt"`
 ## leetCode
 
 -  1 两数之和：[js](./leetcode/two-sum.js), [c++](./leetcode/two-sum.cpp)

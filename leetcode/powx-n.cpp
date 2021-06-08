@@ -1,3 +1,6 @@
+#include "iostream"
+using namespace std;
+
 class Solution
 {
 public:
@@ -19,6 +22,13 @@ public:
         return ans;
     }
 };
+
+int main()
+{
+    auto sol = new Solution();
+    auto res = sol->myPow(2, 10);
+    cout << res << endl;
+}
 
 //  7->3->1->0
 //  1->1*[2]->(2*2)*[2]->(([2]*[2])*[2])*(([2]*[2])*[2])*[2]
