@@ -10,7 +10,7 @@
  * @param {string} t
  * @return {string}
  */
-let tArray = new Uint16Array(128);
+let tArray = new Uint16Array(128);//128个ASCII字符
 let sArray = new Uint16Array(128);
 var minWindow = function (s, t) {
   tArray.fill(0);
