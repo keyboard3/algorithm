@@ -17,10 +17,18 @@ function powRecursion(x, n) {
 function powWhile(x, n) {
   let y = x, ans = 1;
   while (n > 0) {
-    if (n % 2 == 1) ans *= y;//最后*y，起始奇数y
-    y = y * y;
+    if (n % 2 == 1) ans *= y;//核心 1->2->4 = 2*4*16 = 2^7 = 128
     n = parseInt(n / 2);
+    y *= y;
   }
   return ans;
 }
-console.log(myPow(2, 10));
+console.log(myPow(2, 6));
+
+/**
+* 7->3->1->0
+* 1->1*[2]->(2*2)*[2]->(([2]*[2])*[2])*(([2]*[2])*[2])*[2]
+* 查看规律发现奇数的多余计算是反向规律的
+* 7->3->1->0
+* 1->2->4 = 2*4*16 = 2^7 = 128
+*/
