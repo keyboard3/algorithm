@@ -11,6 +11,7 @@ public:
     arrays.clear();
     subArray.clear();
     dfs(nums, 0, nums.size());
+    return arrays;
   }
   void dfs(vector<int> &nums, int start, int end)
   {

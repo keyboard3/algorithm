@@ -6,6 +6,7 @@ vsCode的Code Runner插件对于cpp的配置
 ## leetCode
 
 -  1 两数之和：[js](./leetcode/two-sum.js), [c++](./leetcode/two-sum.cpp)
+-  2 两数相加：[js](./leetcode/add-two-numbers.js), [c++](./leetcode/add-two-numbers.cpp)
 -  50 Pow(x, n)：[js](./leetcode/powx-n.js), [c++](./leetcode/powx-n.cpp)
 -  76 最小覆盖子串：[js](./leetcode/minimum-window-substring.js), [c++](./leetcode/minimum-window-substring.cpp)
 -  77 组合：[js](./leetcode/combinations.js), [c++](./leetcode/combinations.cpp)
