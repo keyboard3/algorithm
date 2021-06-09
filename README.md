@@ -7,7 +7,7 @@ vsCode的Code Runner插件对于cpp的配置
 
 -  1 两数之和：[js](./leetcode/two-sum.js), [c++](./leetcode/two-sum.cpp)
 -  2 两数相加：[js](./leetcode/add-two-numbers.js), [c++](./leetcode/add-two-numbers.cpp)
--  3 无重复字符的最长子串[js](./leetcode/longest-substring-without-repeating-characters.js)
+-  3 无重复字符的最长子串：[js](./leetcode/longest-substring-without-repeating-characters.js)
 , [c++](./leetcode/longest-substring-without-repeating-characters.cpp)
 -  4 寻找两个正序数组的中位数：[js](./leetcode/median-of-two-sorted-arrays.js), [c++](./leetcode/median-of-two-sorted-arrays.cpp)
 -  50 Pow(x, n)：[js](./leetcode/powx-n.js), [c++](./leetcode/powx-n.cpp)
