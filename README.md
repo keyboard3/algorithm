@@ -12,6 +12,7 @@ vsCode的Code Runner插件对于cpp的配置
 -  4 寻找两个正序数组的中位数：[js](./leetcode/median-of-two-sorted-arrays.js), [c++](./leetcode/median-of-two-sorted-arrays.cpp)
 -  5 最长回文子串：[js](./leetcode/longest-palindromic-substring.js), [c++](./leetcode/longest-palindromic-substring.cpp)
 -  6 Z 字形变换：[js](./leetcode/zigzag-conversion.js), [c++](./leetcode/zigzag-conversion.cpp)
+-  7 整数反转：[js](./leetcode/reverse-integer.js), [c++](./leetcode/reverse-integer.cpp)
 -  50 Pow(x, n)：[js](./leetcode/powx-n.js), [c++](./leetcode/powx-n.cpp)
 -  76 最小覆盖子串：[js](./leetcode/minimum-window-substring.js), [c++](./leetcode/minimum-window-substring.cpp)
 -  77 组合：[js](./leetcode/combinations.js), [c++](./leetcode/combinations.cpp)
