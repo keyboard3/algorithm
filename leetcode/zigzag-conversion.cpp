@@ -12,6 +12,27 @@ class Solution
 public:
     string convert(string s, int numRows)
     {
+        if (numRows <= 1)
+            return s;
+            
+        string res;
+        for (int i = 0; i < numRows; i++)
+        {
+            if (i == 0)
+                res = s.substr(0, 1);
+            int start = 0, pos = i;
+            while (start + pos < s.length())
+            {
+                if (pos != 0)
+                    res += s[start + pos];
+                start = start + numRows - 1;
+                pos = numRows - 1 - pos;
+            }
+        }
+        return res;
+    }
+    string convert2(string s, int numRows)
+    {
         string res;
         if (numRows <= 1)
             return s;
