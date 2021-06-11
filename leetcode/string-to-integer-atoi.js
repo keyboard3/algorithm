@@ -8,15 +8,12 @@ var myAtoi = function (s) {
   let result = null, opt = 1;
   for (let chr of s) {
     if (!(chr >= '0' && chr <= '9')) {
-      if (result == null) {
-        if (chr == '+' || chr == '-') {
-          opt = chr == '-' ? -1 : 1;
-          result = 0;
-          continue;
-        }
-        if (chr == ' ') continue;
-        break;
+      if (result == null && (chr == '+' || chr == '-')) {
+        opt = chr == '-' ? -1 : 1;
+        result = 0;
+        continue;
       }
+      if (result == null && chr == ' ') continue;
       break;
     }
     if (result == null) result = 0;
