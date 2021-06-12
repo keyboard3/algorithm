@@ -20,14 +20,12 @@ var isMatch = function (s, p) {
     else pi++;
 
     let matchNum = 0;
-    let isMatch = false;
     do {
       // console.log(tab + "while", s[si], matchChr)
       if (matchNum == 0 && range[0] == 0 && dfs(si, pi, tab + "\t")) return true;
 
       if (!s[si]) return false;
-      isMatch = matchChr == "." || matchChr == s[si];
-      if (isMatch) {
+      if (matchChr == "." || matchChr == s[si]) {
         matchNum++;
         if (dfs(++si, pi, tab + "\t")) return true;
       } else break;
