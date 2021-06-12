@@ -15,6 +15,7 @@ vsCode的Code Runner插件对于cpp的配置
 -  7 整数反转：[js](./leetcode/reverse-integer.js), [c++](./leetcode/reverse-integer.cpp)
 -  8 字符串转换整数 (atoi)：[js](./leetcode/string-to-integer-atoi.js), [c++](./leetcode/string-to-integer-atoi.cpp)
 -  9 回文数：[js](./leetcode/palindrome-number.js), [c++](./leetcode/palindrome-number.cpp)
+-  10 正则表达式匹配：[js](./leetcode/regular-expression-matching.js), [c++](./leetcode/regular-expression-matching.cpp)
 -  50 Pow(x, n)：[js](./leetcode/powx-n.js), [c++](./leetcode/powx-n.cpp)
 -  76 最小覆盖子串：[js](./leetcode/minimum-window-substring.js), [c++](./leetcode/minimum-window-substring.cpp)
 -  77 组合：[js](./leetcode/combinations.js), [c++](./leetcode/combinations.cpp)

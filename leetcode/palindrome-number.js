@@ -6,18 +6,16 @@
  * @param {number} x
  * @return {boolean}
  */
- var isPalindrome = function (x) {
+var isPalindrome = function (x) {
   if (x < 0) return false;
   if (x <= 9) return true;
   let hadX = 0;
   while (x != 0) {
-      let num = x % 10;
-      x = ~~(x / 10);
-      hadX = hadX * 10 + num;
-      if (hadX == 0) return false;
-      if (hadX == x) return true;
-      if (hadX == ~~(x / 10)) return true;
-      if (hadX > x) break;
+    let num = x % 10;
+    x = ~~(x / 10);
+    hadX = hadX * 10 + num;
+    if (hadX == 0 || hadX > x) return false;
+    if (hadX == x || hadX == ~~(x / 10)) return true;
   }
   return false;
 };
