@@ -12,6 +12,7 @@
         "__config": "cpp",
         "__nullptr": "cpp",
         "iostream": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "utility": "cpp"
     }
 }
