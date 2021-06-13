@@ -13,6 +13,9 @@
         "__nullptr": "cpp",
         "iostream": "cpp",
         "string": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "__locale": "cpp",
+        "__string": "cpp",
+        "string_view": "cpp"
     }
 }
