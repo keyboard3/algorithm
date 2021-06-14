@@ -6,8 +6,42 @@ using namespace std;
 class Solution
 {
 public:
-  //通过去重之后，负数区枚举两个在正数区找第3个。正数区枚举两个，找负数区第3个。这种自然的处理就不会导致重复加入结果
+  //枚举出左侧的负数之后，然后所有满足0的解呈现两端向内收缩的趋势
   vector<vector<int>> threeSum(vector<int> &nums)
+  {
+    vector<vector<int>> result;
+    if (nums.size() < 3)
+      return result;
+    sort(nums.begin(), nums.end());
+    for (int i = 0; i < nums.size(); i++)
+    {
+      if (nums[i] > 0)
+        return result;
+      if (i > 0 && nums[i] == nums[i - 1])
+        continue;
+      int l = i + 1, r = nums.size() - 1;
+      while (l < r)
+      {
+        int res = nums[i] + nums[l] + nums[r];
+        if (res == 0)
+        {
+          result.push_back(vector({nums[i], nums[l], nums[r]}));
+          while (l < r && nums[l] == nums[l + 1])
+            l++;
+          while (l < r && nums[r] == nums[r - 1])
+            r--;
+          l++, r--;
+        }
+        else if (res > 0)
+          r--;
+        else
+          l++;
+      }
+    }
+    return result;
+  };
+  //通过去重之后，负数区枚举两个在正数区找第3个。正数区枚举两个，找负数区第3个。这种自然的处理就不会导致重复加入结果
+  vector<vector<int>> threeSum1(vector<int> &nums)
   {
     vector<vector<int>> result;
     sort(nums.begin(), nums.end());
