@@ -22,6 +22,7 @@ vsCode的Code Runner插件对于cpp的配置
 -  14 最长公共前缀：[js](./leetcode/longest-common-prefix.js), [c++](./leetcode/longest-common-prefix.cpp)
 -  15 三数之和：[js](./leetcode/3sum.js), [c++](./leetcode/3sum.cpp)
 -  16 最接近的三数之和：[js](./leetcode/3sum-closest.js), [c++](./leetcode/3sum-closest.cpp)
+-  17 电话号码的字母组合：[js](./leetcode/letter-combinations-of-a-phone-number.js), [c++](./leetcode/letter-combinations-of-a-phone-number.cpp)
 -  50 Pow(x, n)：[js](./leetcode/powx-n.js), [c++](./leetcode/powx-n.cpp)
 -  76 最小覆盖子串：[js](./leetcode/minimum-window-substring.js), [c++](./leetcode/minimum-window-substring.cpp)
 -  77 组合：[js](./leetcode/combinations.js), [c++](./leetcode/combinations.cpp)
