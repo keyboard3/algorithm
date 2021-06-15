@@ -3,61 +3,28 @@ var threeSum = function (nums) {
   if (nums.length < 3) return [];
   const result = [];
   nums.sort((a, b) => a - b);
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] > 0) return result;
+  let target = 0;
+  for (let i = 0; i < nums.length - 1; i++) {
+    if (nums[i] > target) break;
     if (i > 0 && nums[i] == nums[i - 1]) continue;
 
     let l = i + 1, r = nums.length - 1;
     while (l < r) {
       let res = nums[i] + nums[l] + nums[r];
-      if (res == 0) {
+      if (res == target) {
         result.push([nums[i], nums[l], nums[r]]);
         while (l < r && nums[l] == nums[l + 1]) l++;
         while (l < r && nums[r] == nums[r - 1]) r--;
         l++, r--;
       }
-      else if (res > 0) r--;
+      else if (res > target) r--;
       else l++;
     }
   }
   return result;
 }
-var threeSum2 = function (nums) {
-  let result = [];
-  nums.sort((a, b) => a - b);
-  const showNumMap = new Map();
-  for (let i = 0; i < nums.length; i++) {
-    let times = showNumMap.get(nums[i]) || 0;
-    showNumMap.set(nums[i], times + 1);
-  }
-  const distNums = [...showNumMap.keys()]
-  let first = 0;
-  //枚举负数区
-  for (first = 0; distNums[first] < 0; first++) {
-    appendSame(distNums[first]);
-    for (let second = first + 1; distNums[second] < 0; second++)
-      append(distNums[first], distNums[second]);
-  }
-  //枚举正数区
-  for (; first < distNums.length; first++) {
-    appendSame(distNums[first]);
-    for (let second = first + 1; second < distNums.length; second++)
-      append(distNums[first], distNums[second]);
-  }
-  return result;
-  function appendSame(firstVal) {
-    let times = showNumMap.get(firstVal);
-    if (times <= 1 || (firstVal == 0 && times < 3)) return;
-    append(firstVal, firstVal);
-  }
-  function append(firstVal, secondVal) {
-    let threeVal = -firstVal - secondVal;
-    if (!showNumMap.get(threeVal)) return;
-    result.push([firstVal, secondVal, threeVal]);
-  }
-}
 //通过去重之后，负数区枚举两个在正数区找第3个。正数区枚举两个，找负数区第3个。这种自然的处理就不会导致重复加入结果
-var threeSum1 = function (nums) {
+var threeSum = function (nums) {
   let result = [];
   nums.sort((a, b) => a - b);
   const showNumMap = new Map();
@@ -93,7 +60,7 @@ var threeSum1 = function (nums) {
 }
 
 //一个数通过Map映射查找，另外两个数通过枚举组合。并特殊处理高重复的元素情况
-var threeSum2 = function (nums) {
+var threeSum = function (nums) {
   let result = [];
   const map = new Map();
   const inArrayMap = new Map();

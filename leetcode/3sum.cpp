@@ -13,9 +13,10 @@ public:
     if (nums.size() < 3)
       return result;
     sort(nums.begin(), nums.end());
+    int target = 0;
     for (int i = 0; i < nums.size(); i++)
     {
-      if (nums[i] > 0)
+      if (nums[i] > target)
         return result;
       if (i > 0 && nums[i] == nums[i - 1])
         continue;
@@ -23,7 +24,7 @@ public:
       while (l < r)
       {
         int res = nums[i] + nums[l] + nums[r];
-        if (res == 0)
+        if (res == target)
         {
           result.push_back(vector({nums[i], nums[l], nums[r]}));
           while (l < r && nums[l] == nums[l + 1])
@@ -32,7 +33,7 @@ public:
             r--;
           l++, r--;
         }
-        else if (res > 0)
+        else if (res > target)
           r--;
         else
           l++;
