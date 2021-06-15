@@ -13,11 +13,29 @@ const map<char, string> numMap({
     {'8', "tuv"},
     {'9', "wxyz"},
 });
-vector<string> result;
 class Solution
 {
 public:
+  //广度优先组合
   vector<string> letterCombinations(string digits)
+  {
+    vector<string> prevList;
+    if (digits.length() == 0)
+      return prevList;
+    prevList.push_back("");
+    for (auto num : digits)
+    {
+      vector<string> list;
+      for (auto prev : prevList)
+        for (auto chr : numMap.at(num))
+          list.push_back(prev + chr);
+      prevList = list;
+    }
+    return prevList;
+  }
+  //深度优先组合
+  vector<string> result;
+  vector<string> letterCombinations2(string digits)
   {
     result.clear();
     if (digits.length() == 0)
