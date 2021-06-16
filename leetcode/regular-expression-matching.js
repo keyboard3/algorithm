@@ -1,3 +1,55 @@
+//dp优化空间 反向. 实际空间优化有，单不明显
+var isMatch3 = function (s, p) {
+  let state = dfs(s, p.split("").reverse().join(""));
+  return !!state[s.length];
+  function dfs(s, p) {
+    if (!p.length) return [true];
+    let len = 1, state = [];
+    let mchr = p[0];
+    if (p[0] == "*") len = 2, mchr = p[1];
+    const preState = dfs(s, p.slice(len));
+
+    for (let i = 0; i <= s.length; i++) {
+      if (len == 2) {
+        state[i] = preState[i];
+        if (matchChr(s, mchr, i))
+          state[i] |= state[i - 1];
+      } else if (matchChr(s, mchr, i))
+        state[i] = preState[i - 1];
+    }
+    return state;
+  }
+  function matchChr(s, mchr, i) {
+    if (i == 0) return false;
+    if (mchr == "." || mchr == s[i - 1]) return true;
+    return false;
+  }
+}
+//dp优化空间 正向。  实际空间优化有，单不明显
+var isMatch = function (s, p) {
+  let state = dfs(s, p, [true]);
+  return !!state[s.length];
+  function dfs(s, p, preState) {
+    if (!p.length) return preState;
+    let len = 1;
+    let state = [];
+    if (p[1] == "*") len = 2;
+    for (let i = 0; i <= s.length; i++) {
+      if (len == 2) {
+        state[i] = preState[i];
+        if (matchChr(s, p, i))
+          state[i] |= state[i - 1];
+      } else if (matchChr(s, p, i))
+        state[i] = preState[i - 1];
+    }
+    return dfs(s, p.slice(len), state);
+  }
+  function matchChr(s, p, i) {
+    if (i == 0) return false;
+    if (p[0] == "." || p[0] == s[i - 1]) return true;
+    return false;
+  }
+}
 //采用枚举出所有状态，从目标结果倒推出组合路径
 var isMatch = function (s, p) {
   let state = [[]];
@@ -59,6 +111,7 @@ var isMatch2 = function (s, p) {
 };
 
 let array = [
+  [false, "ab", "a*"],
   [true, "a", "a"],//[a]a a
   [true, "aac", "a*c"],//[a]a a
   [true, "ab", ".*"], //[ab] .*
@@ -66,11 +119,10 @@ let array = [
   [true, "aaa", "a*a"],//a[a]a
   [false, "mississippi", "mis*is*p*."],
   [false, "ippi", "p*."],
-  [false, "ab", "a*"],
   [false, "a", ".*..a*"],
   [true, "aasdfasdfasdfasdfas", "aasdf.*asdf.*asdf.*asdf.*s"],
 ]
 for (let [result, ...params] of array) {
-  let mr = isMatch(...params);
+  let mr = isMatch3(...params);
   console.log(mr == result, params);
 }
