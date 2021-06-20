@@ -18,6 +18,7 @@
         "__string": "cpp",
         "string_view": "cpp",
         "tuple": "cpp",
-        "type_traits": "cpp"
+        "type_traits": "cpp",
+        "unordered_set": "cpp"
     }
 }

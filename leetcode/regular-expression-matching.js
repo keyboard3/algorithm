@@ -85,7 +85,7 @@ var isMatch = function (s, p) {
 }
 //采用递归枚举组合出目标结果
 var isMatch2 = function (s, p) {
-  return dfs(0, 0, "");
+  return dfs(0, 0);
   function dfs(si, pi) {
     if (si >= s.length && pi >= p.length) return true;
 
