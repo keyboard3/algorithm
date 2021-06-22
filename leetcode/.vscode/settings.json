@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "unordered_map": "cpp",
+        "deque": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "optional": "cpp",
+        "stack": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp"
+    }
+}
