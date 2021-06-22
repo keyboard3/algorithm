@@ -21,18 +21,21 @@ class LRUCache {
         this.map = new Map();
     }
     delete(key) {
+        // console.log("delete", key);
         let node = this.map.get(key);
         if (!node) return;
         node.prev.setChild(node.next);
         this.map.delete(key);
     }
     attachHead(key, value) {
+        // console.log("attachHead", key, value);
         const node = new Node(key, value);
         node.setChild(this.headNode.next);
         this.headNode.setChild(node);
         this.map.set(key, node);
     }
     get(key) {
+        // console.log("get", key);
         const node = this.map.get(key);
         if (!node) return -1;
         this.delete(key);
@@ -40,9 +43,9 @@ class LRUCache {
         return this.headNode.next.val;
     }
     put(key, value) {
-        if (this.map.get(key)||this.map.size >= this.capacity) {
-            this.delete(this.tailNode.prev.key);
-        }
+        // console.log("put", key, value);
+        if (this.map.get(key)) this.delete(key);
+        else if (this.map.size >= this.capacity) this.delete(this.tailNode.prev.key);
         this.attachHead(key, value);
     }
 }

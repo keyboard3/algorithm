@@ -32,5 +32,5 @@ vsCode的Code Runner插件对于cpp的配置
 -  77 组合：[js](./leetcode/combinations.js), [c++](./leetcode/combinations.cpp)
 -  78 子集：[js](./leetcode/subsets.js), [c++](./leetcode/subsets.cpp)
 -  79 单词搜索：[js](./leetcode/word-search.js), [c++](./leetcode/word-search.cpp)
--  146 单词搜索：[js](./leetcode/lru-cache.js), [c++](./leetcode/lru-cache.cpp)
+-  146 LRU 缓存机制：[js](./leetcode/lru-cache.js), [c++](./leetcode/lru-cache.cpp)
 - 1600 皇位继承顺序：[js](./leetcode/throne-inheritance.js), [c++](./leetcode/throne-inheritance.cpp)
