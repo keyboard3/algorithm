@@ -28,6 +28,7 @@ vsCode的Code Runner插件对于cpp的配置
 -  20 有效的括号：[js](./leetcode/valid-parentheses.js), [c++](./leetcode/valid-parentheses.cpp)
 -  21 合并两个有序链表：[js](./leetcode/merge-two-sorted-lists.js), [c++](./leetcode/merge-two-sorted-lists.cpp)
 -  22 括号生成：[js](./leetcode/generate-parentheses.js), [c++](./leetcode/generate-parentheses.cpp)
+-  23 合并K个升序链表：[js](./leetcode/merge-k-sorted-lists.js), [c++](./leetcode/merge-k-sorted-lists.cpp)
 -  50 Pow(x, n)：[js](./leetcode/powx-n.js), [c++](./leetcode/powx-n.cpp)
 -  76 最小覆盖子串：[js](./leetcode/minimum-window-substring.js), [c++](./leetcode/minimum-window-substring.cpp)
 -  77 组合：[js](./leetcode/combinations.js), [c++](./leetcode/combinations.cpp)
