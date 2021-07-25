@@ -6,6 +6,7 @@ vsCode的Code Runner插件对于cpp的配置
 # 算法
 - 堆排序
   - [js](./heap-sort.js)
+  - [c++](./heap-sort.cpp)
 ## leetCode
 
 -  1 两数之和：[js](./leetcode/two-sum.js), [c++](./leetcode/two-sum.cpp)
