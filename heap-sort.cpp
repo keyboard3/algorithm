@@ -13,7 +13,7 @@ void printArray(int len, int *array)
 int main()
 {
   const int arraySize = 5;
-  int array[arraySize] = {9, 8, 2, 4, 1};
+  int array[arraySize] = {3, 4, 5, 1, 8};
   sortArray(arraySize, array, false);
   printArray(arraySize, array);
 }
@@ -22,11 +22,16 @@ void sortArray(int len, int *array, bool isAsc)
   int heap[len];
   memcpy(&heap[0], &array[0], sizeof(int) * len);
   //原地建堆1：初始假设为空集的堆结构，然后不断从前向后引入数据,相当于底层招进的人然后通过申请到合适位置
-  for (int i = 1; i < len; i++)
+  // for (int i = 1; i < len; i++)
+  //   adjustHeapTail(i + 1, heap, isAsc);
+  //原地建堆2：从下到上的逐步构建堆结构，假设是子节点符合堆结构，那么调整根节点就行
+  for (int i = len - 1; i >= 0; i--)
   {
-    adjustHeapTail(i + 1, heap, isAsc);
+    //跳过子节点
+    if (((i + 1) * 2) - 1 >= len)
+      continue;
+    adjustHeapRoot(len - i, &heap[0] + i, isAsc);
   }
-  //原地建堆2：通过群众选举代表的方式，数据从后向逐渐向上将堆结构构建完成 TODO
   //排序
   for (int i = len - 1; i >= 0; i--)
   {

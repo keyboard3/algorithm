@@ -5,13 +5,14 @@ var sortArray = function (nums, isAsc) {
   for (let i = 1; i < heap.length; i++) {
     adjustHeapTail(heap, i, isAsc);
   }
-  //原地建堆2：从后往前处理数据，从上到下堆化。（类似于逐级向上选举组成结构）TODO 有瑕疵
-  // let parentIndex = heap.length - 1;
-  // while (parentIndex > 0) {
-  //   compParentChild(heap, parentIndex, (parentIndex + 1) * 2 - 1, isAsc);
-  //   compParentChild(heap, parentIndex, (parentIndex + 1) * 2, isAsc);
-  //   parentIndex = Math.ceil((parentIndex + 1) / 2) - 1;
-  // }
+  //原地建堆2：从后往前处理数据，从上到下堆化。(因为下面结构稳定，只要调整根节点就成)
+  for (let i = heap.length - 1; i >= 0; i--) {
+    //叶子节点跳过
+    if (((i + 1) * 2) - 1 >= heap.length) continue;
+    let partialHeap = heap.slice(i);
+    adjustHeapRoot(partialHeap, isAsc);
+    heap = [...heap.slice(0, i), ...partialHeap];
+  }
 
   //取堆跟排序
   for (let i = heap.length - 1; i >= 0; i--) {
@@ -25,7 +26,7 @@ var sortArray = function (nums, isAsc) {
   return nums;
 };
 
-console.log(sortArray([3, 4, 5, 1, 8], false));
+console.log(sortArray([3, 4, 5, 1, 8], true));
 
 //从下往上堆化（类似于从下面招聘上来的，经过评审调整位置）
 function adjustHeapTail(nums, childIndex, isAsc) {
