@@ -7,6 +7,9 @@ vsCode的Code Runner插件对于cpp的配置
 - 堆排序
   - [js](./heap-sort.js)
   - [c++](./heap-sort.cpp)
+- 冒泡排序
+  - [js](./bubble-sort.js)
+  - [js](./bubble-sort.cpp)
 ## leetCode
 
 -  1 两数之和：[js](./leetcode/two-sum.js), [c++](./leetcode/two-sum.cpp)
