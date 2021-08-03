@@ -1,13 +1,13 @@
 #include "iostream"
 using namespace std;
 /**
- * 通过遍历数组的无序区域，对比交换将最大/最小移动到最后面
- * 不断缩小遍历的无序区域，直到至空集
+ * 将无序区域第一个逐个比较插入到前面有序区域的适合位置
+ * 不断缩小遍历的无序数组，直到至空集
 **/
 void sort(int *array, int len, bool asc)
 {
-    for (int i = 0; i < len; i++)
-        for (int j = 1; j < len - i; j++)
+    for (int i = 1; i < len; i++)
+        for (int j = i; j > 0; j--)
         {
             if (array[j - 1] > array[j] && asc)
                 swap(array[j - 1], array[j]);

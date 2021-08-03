@@ -5,11 +5,13 @@ vsCode的Code Runner插件对于cpp的配置
 `"cpp": "cd $dir && mkdir -p .dist && g++ -std=c++17 -stdlib=libc++ -g $fileName -o .dist/$fileNameWithoutExt && $dir/.dist/$fileNameWithoutExt"`
 # 算法
 - 堆排序
-  - [js](./heap-sort.js)
-  - [c++](./heap-sort.cpp)
+  - [js](./heap-sort.js),[c++](./heap-sort.cpp)
 - 冒泡排序
-  - [js](./bubble-sort.js)
-  - [js](./bubble-sort.cpp)
+  - [js](./bubble-sort.js),[c++](./bubble-sort.cpp)
+- 选择排序
+  - [js](./select-sort.js),[c++](./select-sort.cpp)
+- 插入排序
+  - [js](./insert-sort.js),[c++](./insert-sort.cpp)
 ## leetCode
 
 -  1 两数之和：[js](./leetcode/two-sum.js), [c++](./leetcode/two-sum.cpp)
